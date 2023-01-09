@@ -1,9 +1,12 @@
-export default function Animal(props) {
+import '../Animal/Animal.css';
+
+export default function Animal({ prop }) {
+  console.log('prop', prop);
   return (
-    <div className="animal" style={{ top: props.top, left: props.left }}>
-      <img className="animal"></img>
-      <h3 className="animal name">{props.name}</h3>
-      <p>{props.says}</p>
+    <div className="animal" style={{ top: `${prop.top}`, left: `${prop.left}` }}>
+      <img className="animals" src={`./animals/${prop.type}.svg`}></img>
+      <h3 className="animal name">{prop.name}</h3>
+      <p>{prop.says}</p>
     </div>
   );
 }
